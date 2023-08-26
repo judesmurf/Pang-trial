@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Popout Dropdown</title>
+
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Include Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  <style>
+    main {
+      padding-bottom: 80px;
+    }
+
+    .page-header {
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 60px;
+    }
+
+    .page-header h3 {
+      color: #337ab7;
+    }
+
+    .content-window {
+      width: 100%;
+      min-height: 480px;
+      margin-top: 80px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .window-img {
+      width: 100%;
+      height: 180px;
+      background: #ddd;
+      background-size: cover;
+      background-position: center center;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+    }
+
+    .window-button {
+      height: 50px;
+      width: 50px;
+      color: #000000;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgb(255, 0, 123);
+      margin-top: -50px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .window-button>.glyphicon {
+      font-size: 20px;
+      text-align: center;
+      top: 2px;
+      margin: 0;
+      margin-left: 0;
+      transition-duration: 0.6s;
+    }
+
+    .window-text {
+      margin-top: 50px;
+      padding: 40px;
+    }
+
+    .window-text-center {
+      margin-top: 0;
+    }
+
+    .window-text>p {
+      color: #ccc;
+    }
+
+    /* Popout to right Styles */
+    .popout-right {
+      width: 100px;
+      margin-left: 20px;
+    }
+
+    .popout-menu-right {
+      background: none;
+      border: none;
+      box-shadow: none;
+      left: 110px;
+      top: -82px;
+    }
+
+    .popout-menu-right li {
+      width: 140px;
+      margin-bottom: 18px;
+      padding: 6px;
+      background: #337ab7;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .popout-menu-right li:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .popout-menu-right li:nth-of-type(2n) {
+      margin-left: 12px;
+    }
+
+    .popout-menu-right li a {
+      color: #fff;
+    }
+
+    .popout-menu-right li a:hover {
+      background: inherit;
+      color: #ffffff;
+    }
+
+    .popout-menu-right li:hover {
+      background: #286090;
+    }
+
+    .popout-menu-right li:hover:after {
+      border-right-color: #286090;
+    }
+
+    .arrow-box-left {
+      position: relative;
+      background: #337ab7;
+    }
+
+    .arrow-box-left::after {
+      right: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-right-color: #337ab7;
+      border-width: 8px;
+      margin-top: -8px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <section class="row">
+      <div class="col-md-12 page-header">
+        <h1>Bootstrap Popout Dropdown</h1>
+        <h3><em>A little fun with Bootstrap's Dropdown JS and Animate.css</em></h3>
+      </div>
+    </section>
+    <section class="row">
+      <!-- Pops out to right -->
+      <div class="col-md-4">
+        <div class="content-window">
+          <div class="window-img"></div>
+
+          <div class="dropdown popout-right pull-left">
+            <button class="window-button btn-primary dropdown-toggle" type="button" role="button" id="dropdownMenu1"
+              data-toggle="dropdown" aria-expanded="true">
+              <span class="icon-popout-right glyphicon glyphicon-menu-hamburger"></span>
+            </button>
+            <ul class="dropdown-menu popout-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation" class="dropdown-link-right arrow-box-left"><a role="menuitem" tabindex="-1"
+                  href="#">ACCEPT</a></li>
+              <li role="presentation" class="dropdown-link-right arrow-box-left"><a role="menuitem" tabindex="-1"
+                  href="#">REJECT</a></li>
+              <li role="presentation" class="dropdown-link-right arrow-box-left"><a role="menuitem" tabindex="-1"
+                  href="#">PENDING</a></li>
+            </ul>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="window-text">
+            <h4>Popout to right!</h4>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Include jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Include Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    // For popout to right
+    $('.popout-right').on('show.bs.dropdown', function () {
+      $('.window-button > .icon-popout-right').removeClass('glyphicon-menu-hamburger');
+      $('.window-button > .icon-popout-right').addClass('animated rotateIn glyphicon-remove');
+      $('.dropdown-link-right').addClass('animated bounceIn');
+    });
+    $('.popout-right').on('hide.bs.dropdown', function () {
+      $('.window-button > .icon-popout-right').removeClass('animated rotateIn glyphicon-remove');
+      $('.dropdown-link-right').removeClass('animated bounceIn');
+      $('.window-button > .icon-popout-right').addClass('glyphicon-menu-hamburger');
+    });
+  </script>
+
+</body>
+
+</html>
